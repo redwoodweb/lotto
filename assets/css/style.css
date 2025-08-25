@@ -1,0 +1,119 @@
+@charset 'UTF-8';
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+:root {
+  --ball-size: 60px;
+  --ball-radius: 30px;
+  --layout-size: 500px;
+  --font-size: 24px;
+  --body-bg: #4cc9f0;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: var(--body-bg);
+}
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 60px;
+  color: white;
+  margin: 20px auto 10px;
+}
+h1 + p {
+  font-size: 21px;
+  color: white;
+  margin-bottom: 20px;
+}
+#wrap {
+  text-align: center;
+}
+.inner {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: var(--layout-size);
+  height: var(--layout-size);
+  margin: 0 auto;
+  background: #4361ee;
+  border-radius: 100%;
+  overflow: hidden;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.2);
+}
+.inner div {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  width: var(--ball-size);
+  height: var(--ball-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3a0ca3;
+  border-radius: var(--ball-radius);
+  color: white;
+  font-size: var(--font-size);
+  font-weight: bold;
+}
+.inner div.selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: #7209b7;
+}
+.get-number {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: calc(100% / 7 - 60px);
+  height: 60px;
+  width: var(--layout-size);
+  margin: 0 auto 50px;
+}
+.get-number div {
+  position: relative;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  color: white;
+  font-size: var(--font-size);
+  font-weight: bold;
+  background: #7209b7;
+  animation: getNumberMove 0.3s ease-in-out 1 both;
+}
+.get-number div.bonus {
+  background: #f72585;
+}
+button {
+  outline: none;
+  height: 50px;
+  color: white;
+  font-size: 21px;
+  border: 0;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  padding: 0 30px;
+  background-image: none;
+  background-color: rgba(247, 37, 133, 1);
+  transition: 0.3s;
+}
+button:hover {
+  background-color: rgba(247, 37, 133, 0.9);
+}
+
+@keyframes getNumberMove {
+  0% {
+    opacity: 0;
+    top: 50px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
